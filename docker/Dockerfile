@@ -22,6 +22,10 @@ RUN npm install
 
 RUN python3.6 manage.py collectstatic --noinput
 
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
+RUN rm -f /etc/nginx/sites-enabled/default
+
 RUN rm -f /rapidpro/temba/settings.pyc
 
 COPY docker/entrypoint.sh /
