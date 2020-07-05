@@ -2345,7 +2345,7 @@ class UserSettings(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="settings")
     language = models.CharField(
-        max_length=8, choices=settings.LANGUAGES, default="en-us", help_text=_("Your preferred language")
+        max_length=8, choices=settings.LANGUAGES, default="pt-br", help_text=_("Your preferred language")
     )
     tel = models.CharField(
         verbose_name=_("Phone Number"),
