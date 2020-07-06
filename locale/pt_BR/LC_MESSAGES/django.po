@@ -8619,7 +8619,7 @@ msgid "Download Results"
 msgstr "Resultados ao vivo"
 
 msgid "No runs"
-msgstr ""
+msgstr "Nenhuma execução"
 
 #, fuzzy, python-format
 msgid ""

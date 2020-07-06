@@ -14,7 +14,7 @@
     %meta{charset:"utf-8"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
     %meta{name:"description", content:"{% block page-description %}{{brand.name}} - Capacita&ccedil;&atilde;o para sua seguran&ccedil;a.{% endblock %}"}
-    %meta{name:"author", content:"Nyaruka Ltd"}
+    %meta{name:"author", content:"Geocart"}
     %meta{http-equiv:"X-UA-Compatible", content:"IE=10"}
 
     -load compress
@@ -98,7 +98,7 @@
     -include "includes/frame_top.html"
 
     -if brand.favico
-      %link{type:"image/ico", rel:"shortcut icon", href:"{{ STATIC_URL }}{{ brand.favico }}"}
+      %link{type:"image/ico", rel:"shortcut icon", href:"https://www.ctgbr.com.br/wp-content/uploads/2015/08/favicon.png"}
     -else
       %link{type:"image/ico", rel:"shortcut icon", href:"{{ STATIC_URL }}images/favicon.ico"}
 
