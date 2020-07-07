@@ -248,14 +248,14 @@
     <!-- Header -->
     #print-header
       %span.logo.icon-logo
-	  %img{type:"image/ico", rel:"icon-logo", src:"https://www.ctgbr.com.br/wp-content/uploads/2019/06/logo-300x112-300x112.png"}
+	  
 
     #header
       &nbsp;
 
     %a#big-logo.logo{href:"/", title:"{{brand.name}}"}
       .name
-        {{brand.name}}
+        %img{type:"image/ico", rel:"icon-logo", src:"https://www.ctgbr.com.br/wp-content/uploads/2019/06/logo-300x112-300x112.png"}
 
     -block nav
       -include 'includes/nav.html'
