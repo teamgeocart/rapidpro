@@ -66,12 +66,19 @@
           -trans "android"
 
   -if not request.user.is_anonymous
-	%li.nav-logout
-      %a.icon-nav-logout{href:"{% url 'users.user_logout' %}"}
+    %li.more
+      %a.icon-menu-4{href:""}
+
+      .submenu-container.hide
+        .submenu
+
+          %a.icon-nav-logout{href:"{% url 'users.user_logout' %}"}
             .title
               -trans "logout"
+
   -else
     -block temba-login
+
       %li.nav-login
         %a.icon-nav-login{href:"{% ssl_brand_url 'users.user_check_login' %}"}
           .title
