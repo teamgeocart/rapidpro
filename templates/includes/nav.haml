@@ -66,13 +66,17 @@
           -trans "android"
 
   -if not request.user.is_anonymous
-    %li.more
+    <!-- %li.more
       %a.icon-menu-4{href:""}
 
       .submenu-container.hide
         .submenu
 
           %a.icon-nav-logout{href:"{% url 'users.user_logout' %}"}
+            .title
+              -trans "logout" -->
+	%li.nav-logout
+      %a.icon-nav-logout{href:"{% url 'users.user_logout' %}"}
             .title
               -trans "logout"
 
