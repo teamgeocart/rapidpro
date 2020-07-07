@@ -167,7 +167,7 @@ msgid "Stop it and start this event"
 msgstr "e inicie o"
 
 msgid "Skip this event"
-msgstr ""
+msgstr "Ignorar esse evento"
 
 #, fuzzy
 #| msgid "Flow to start"
