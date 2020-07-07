@@ -3422,13 +3422,13 @@ msgstr ""
 
 #, fuzzy
 msgid "All Contacts"
-msgstr "Contatos"
+msgstr "Todos Contatos"
 
 msgid "Blocked"
-msgstr ""
+msgstr "Bloqueados"
 
 msgid "Stopped"
-msgstr ""
+msgstr "Interrompidos"
 
 msgid "Add to Group"
 msgstr "Adicionar ao grupo"
@@ -3522,16 +3522,17 @@ msgstr "Enviar mensagem"
 #, fuzzy
 #| msgid "Custom Contact Fields"
 msgid "Custom Fields"
-msgstr "Campos de contato personalizados"
+msgstr "Campos Personalizados"
 
 msgid "Block"
-msgstr ""
+msgstr "Bloquear"
 
 msgid "Unblock"
-msgstr ""
+msgstr "Desbloquear"
+msgstr "Desbloquear"
 
 msgid "Unstop"
-msgstr ""
+msgstr "Retomar"
 
 #, fuzzy
 msgid "Save as Group"
@@ -7487,7 +7488,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Plan Start"
 msgid "Call Started"
-msgstr "Início do plano"
+msgstr "Ligação iniciada"
 
 #, fuzzy
 #| msgid "Missed Outgoing Call"
@@ -7612,12 +7613,12 @@ msgstr ""
 
 #, fuzzy
 msgid "Email sent to"
-msgstr "Enviado"
+msgstr "Email enviado para"
 
 #, fuzzy
 #| msgid "Subject"
 msgid "with subject"
-msgstr "Assunto"
+msgstr "com o assunto"
 
 #, fuzzy
 msgid "Started"
@@ -7949,7 +7950,7 @@ msgid "History"
 msgstr "Histórico de mensagens"
 
 msgid "Full"
-msgstr ""
+msgstr "Completo"
 
 #, fuzzy
 msgid "Delete Contact"
