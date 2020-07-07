@@ -22,6 +22,8 @@ RUN npm install
 
 RUN python3.6 manage.py collectstatic --noinput
 
+RUN django-admin compilemessages -l pt_BR
+
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN rm -f /etc/nginx/sites-enabled/default
