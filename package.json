@@ -9,7 +9,7 @@
     ]
   },
   "dependencies": {
-    "@geocart/flow-editor": "1.8.9",
+    "@geocart/flow-editor": "1.8.10",
     "coffeescript": "1.12.7",
     "less": "2.7.1",
     "react": "16.3.2",
