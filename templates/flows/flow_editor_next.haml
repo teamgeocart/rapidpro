@@ -134,6 +134,12 @@
       display: block;
     }
 
+    {% if from_iframe %}
+     #header, #big-logo, #top-menu, .org-header, #footer {
+       display: none;
+     }
+    {% endif %}
+
 -block extra-script
   {{ block.super }}
 
@@ -287,20 +293,21 @@
 
   %rp-modax#send-message-modal{ header:"Send Message" }
 
-  #toolbar
-    .actions.pull-right
-      -include "gear_links_include.haml"
-    %h2
-      -if flow.flow_type == 'V'
-        .icon-phone
-      -elif flow.flow_type == 'S'
-        .icon-mobile
-      {{ flow.name }}
-    -if is_starting
-      #pending
-        %div{class:"alert alert-info"}
-          -blocktrans
-            This flow is in the process of being sent, this message will disappear once all contacts have been added to the flow.
+  -if not from_iframe
+    #toolbar
+      .actions.pull-right
+        -include "gear_links_include.haml"
+      %h2
+        -if flow.flow_type == 'V'
+          .icon-phone
+        -elif flow.flow_type == 'S'
+          .icon-mobile
+        {{ flow.name }}
+      -if is_starting
+        #pending
+          %div{class:"alert alert-info"}
+            -blocktrans
+              This flow is in the process of being sent, this message will disappear once all contacts have been added to the flow.
 
   #rp-flow-editor
     <rp-loading units="10" size="8"></rp-loading>

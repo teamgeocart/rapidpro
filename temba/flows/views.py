@@ -1231,6 +1231,10 @@ class FlowCRUDL(SmartCRUDL):
 
             context["feature_filters"] = json.dumps(feature_filters)
 
+            iframe_token = self.request.GET.get("t")
+            if iframe_token:
+                context["from_iframe"] = True
+
             return context
 
         def get_gear_links(self):
