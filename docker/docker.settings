@@ -158,3 +158,8 @@ VALUE_FIELD_SIZE = int(os.environ.get("VALUE_FIELD_SIZE", 640))
 FLOWRUN_FIELDS_SIZE = int(os.environ.get("FLOWRUN_FIELDS_SIZE", 256))
 
 COURIER_DEFAULT_TPS = int(os.environ.get("COURIER_DEFAULT_TPS", 100))
+
+GEOCART_IFRAME_ORIGIN = os.environ.get("GEOCART_IFRAME_ORIGIN", "")
+GEOCART_USERNAME = os.environ.get("GEOCART_USERNAME", "")
+GEOCART_PASSWORD = os.environ.get("GEOCART_PASSWORD", "")
+GEOCART_ORG_ID = int(os.environ.get("GEOCART_ORG_ID", 1))
