@@ -41,10 +41,10 @@ class OrgHeaderMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.headers.get("Referer") == settings.GEOCART_IFRAME_ORIGIN and not request.user.is_authenticated:
-            user = authenticate(request, username=settings.GEOCART_USERNAME, password=settings.GEOCART_PASSWORD)
+        if request.headers.get("Referer") == settings.TRAINING_IFRAME_ORIGIN and not request.user.is_authenticated:
+            user = authenticate(request, username=settings.TRAINING_USERNAME, password=settings.TRAINING_PASSWORD)
             login(request, user)
-            user._org = Org.objects.filter(administrators=request.user, is_active=True, id=settings.GEOCART_ORG_ID).first()
+            user._org = Org.objects.filter(administrators=request.user, is_active=True, id=settings.TRAINING_ORG_ID).first()
 
         response = self.get_response(request)
 
