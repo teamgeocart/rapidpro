@@ -52,9 +52,8 @@ class OrgHeaderMiddleware:
             ):
                 user = authenticate(request, username=settings.TRAINING_USERNAME, password=settings.TRAINING_PASSWORD)
                 login(request, user)
-                user._org = Org.objects.filter(
-                    administrators=request.user, is_active=True, id=settings.TRAINING_ORG_ID
-                ).first()
+                user._org = Org.objects.filter(id=settings.TRAINING_ORG_ID).first()
+                request.user = user
 
         response = self.get_response(request)
 
