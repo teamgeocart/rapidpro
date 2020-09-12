@@ -3,6 +3,7 @@ import logging
 import pstats
 import traceback
 from io import StringIO
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib.auth import authenticate, login
@@ -41,10 +42,19 @@ class OrgHeaderMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.headers.get("Referer") == settings.TRAINING_IFRAME_ORIGIN and not request.user.is_authenticated:
+        request_referer = request.headers.get("Referer")
+        request_parse = urlparse(request_referer)
+
+        if (
+            request_parse.netloc == settings.TRAINING_IFRAME_ORIGIN
+            and "t=" in request_parse.query
+            and not request.user.is_authenticated
+        ):
             user = authenticate(request, username=settings.TRAINING_USERNAME, password=settings.TRAINING_PASSWORD)
             login(request, user)
-            user._org = Org.objects.filter(administrators=request.user, is_active=True, id=settings.TRAINING_ORG_ID).first()
+            user._org = Org.objects.filter(
+                administrators=request.user, is_active=True, id=settings.TRAINING_ORG_ID
+            ).first()
 
         response = self.get_response(request)
 
