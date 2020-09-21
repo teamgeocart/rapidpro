@@ -21,8 +21,17 @@ class IndexView(SmartTemplateView):
     def pre_process(self, request, *args, **kwargs):
         response = super().pre_process(request, *args, **kwargs)
         redirect = self.request.branding.get("redirect")
+
         if redirect:
             return HttpResponseRedirect(redirect)
+
+        params = list(self.request.GET.keys())
+        get_params = self.request.GET
+        query_string_redirect = f"/treinamento/?{'&'.join([f'{item}={get_params[item]}' for item in params])}"
+
+        if "t" in params and "e" in params:
+            return HttpResponseRedirect(query_string_redirect)
+
         return response
 
     def get_context_data(self, **kwargs):
